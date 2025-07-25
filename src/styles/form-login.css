@@ -1,0 +1,36 @@
+.form__content-extra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25vw;
+}
+
+/* MODIFICACION DEL TEXT */
+.text--tamanio_reducido {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* MODIFICACION DEL LINK */
+.link--verde_menta-subrayado {
+  font-size: 1.2rem;
+  color: var(--verde-menta);
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.link--verde_menta-subrayado:hover {
+  color: var(--turquesa-medio);
+  text-decoration: underline;
+  text-shadow: none;
+}
+
+/* MODIFICACIÓN DE LA ALTURA DE LA SECTION-CONTAINER Y 
+LA ALTURA DEL FORM EN EL FORM-LOGIN */
+.section-container--altura {
+  height: 71%;
+}
+
+.form--altura {
+  height: 27vw;
+}

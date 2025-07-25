@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREAR ARTICULO</title>
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="shortcut icon" href="../../images/letra_logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+</head>
+<body>
+  <header class="header header--static">
+    <div class="header-container header-nav--sin_gradiente">
+      <div class="header-content header-content--sin_borde_redondeado">
+        <img class="img img--tamanio_reduccion" src="../../images/logo_completo.png" alt="logo">
+        <nav class="nav">
+          <ul class="nav-content__list">
+            <li class="nav-content__list-item">
+              <a class="link link--turquesa_oscuro-texto_sin_sombra" href="../vistaVendedor.html">Inicio</a>
+            </li>
+            <div class="nav-content__list-item nav-content__list-item--busqueda nav-content__list-item--ancho">
+              <iconify-icon icon="lets-icons:search-duotone" class="icon"></iconify-icon>
+              <input class="input input--sin_borde-sin_sombra" type="search" id="busqueda" name="busqueda"
+                placeholder="Buscar artículos por nombre o categoría" required>
+            </div>
+          </ul>
+        </nav>
+        <div class="nav-content__list-item">
+          <div class="header-content__user">
+            <input class="input__check" type="checkbox" id="activo">
+            <label for="activo" class="label__icon">
+              <iconify-icon icon="ph:user-circle-light" class="icon icon--tamanio_aumentado"></iconify-icon>
+            </label>
+            <!-- PANEL USUARIO  -->
+            <div class="panel-user">
+              <div class="panel__close-container">
+                <label for="activo" class="panel__close">
+                  <iconify-icon icon="material-symbols:close-small-outline-rounded" class="icon icon--cerrar-panel"></iconify-icon>
+                </label>
+              </div>
+              <div class="panel__top">
+                <div class="panel__content panel__content--sin_hover">
+                  <div class="panel__content-profile">
+                    <h1 class="title-principal title-principal--tamanio_reduccion_sin_sombra">Dylan Slebyng Bravo Becerra
+                    </h1>
+                    <a href="../actualizarPerfilUsuario.html" class="link link--subrayado_verde_menta">Actualizar Perfil</a>
+                  </div>
+                  <iconify-icon icon="ph:user-circle-light" class="icon icon--tamanio_aumentado"></iconify-icon>
+                </div>
+                <a href="#" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="akar-icons:circle-plus"
+                    class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Publicar Articulo</h3>
+                </a>
+                <a href="../vistaVendedor.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="ant-design:product-outlined"
+                    class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Mis Articulos</h3>
+                </a>
+                <a href="HistorialVentas.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="mdi:cart-check" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Ventas Realizadas</h3>
+                </a>
+                <a href="HistorialNotificaciones.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="streamline-plump:ringing-bell-notification" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Notificaciones</h3>
+                </a>
+                <a href="HistorialComentarios.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="fluent:chat-24-regular" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Comentarios Recibidos</h3>
+                </a>
+              </div>
+              
+              <div class="panel__bottom">
+                <a href="#" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="codicon:sign-out" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Cerrar Sesion</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- CONTENIDO DE TODOS LOS PRODUCTOS -->
+  <main class="container">
+    <section class="section-container section-container--fondo-turquesa-oscuro">
+      <form id="form-create-articulo" method="post" class="form form--ancho_aumentado" enctype="multipart/form-data" novalidate>
+        <h1 class="title-principal title-principal--turquesa-medio">Crear Artículo</h1>
+
+        <div class="form__content">
+          <label for="imagen" class="input input--files"></label>
+          <input class="input input--oculto" type="file" id="imagen" name="imagenes" accept="image/*" multiple required>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="text" id="nombre_articulo" name="nombre_articulo" placeholder="Nombre del artículo"
+            required>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="number" id="precio_articulo" name="precio_articulo" placeholder="Precio"
+            step="0.01" min="0" required>
+        </div>
+
+        <div class="form__content">
+          <textarea class="input input--textarea" id="condicion_articulo" name="condicion_articulo" rows="4"
+            placeholder="Describe la condición del artículo (nuevo, usado, con detalles, etc.)" required></textarea>
+        </div>
+
+        <div class="form__content">
+          <select class="select" id="categoria" name="id_categoria" required>
+            <option class="option" value="">Selecciona una categoría</option>
+            Estas opciones deben son llenadas dinámicamente desde la base de datos
+          </select>
+        </div>
+        <div class="form__content">
+          <input class="input" type="number" id="stock" name="stock" placeholder="Stock disponible" min="1" required>
+        </div>
+
+        <button id="btnCrearArticulo" class="button button--gradient-verde-agua_turquesa-oscuro" type="submit">Crear
+          Artículo</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="../../js/vendedor/crearArticulo.js"></script>
+</body>
+</html>

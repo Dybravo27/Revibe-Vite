@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREAR CUENTA</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="shortcut icon" href="../images/letra_logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <main class="content-form">
+    <section class="section-container">
+      <img class="img img--centrado-sombra_verde_menta" src="../images/logo_completo.png" alt="logo">
+      <form id="form-create" method="POST" class="form" novalidate>
+        <h1 class="title-principal title-principal--turquesa-medio">Crear cuenta - ReVibe</h1>
+        <div class="form__content">
+          <input class="input" type="text" id="nombres" name="nombres" placeholder="Nombre" data-placeholder-original="Nombre" required>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="text" id="apellidos" name="apellidos" placeholder="Apellido"
+          data-placeholder-original="Apellido" required>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="email" id="email" name="email" placeholder="Email" 
+          data-placeholder-original="Email" required>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="tel" id="telefono" name="telefono" placeholder="Número Telefono" data-placeholder-original="Número Telefono" required>
+        </div>
+
+        <div class="form__content">
+          <select class="select" id="ciudad" name="ciudad" data-placeholder-original="Ciudad" required>
+            <option class="option" value="">Selecciona una ciudad</option>
+          </select>
+        </div>
+
+        <div class="form__content">
+          <select class="select" id="rol" name="rol" data-placeholder-original="Rol" required>
+            <option class="option" value="">Selecciona un rol</option>
+            <option class="option" value="2">Comprador</option>
+            <option class="option" value="3">Vendedor</option>
+          </select>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="text" id="direccion" name="direccion" placeholder="Dirección" data-placeholder-original="Dirección" required>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" data-placeholder-original="Contraseña" required>
+        </div>
+
+        <div class="form__content">
+          <input class="input" type="password" id="confirmar-contrasena" name="confirmar_contrasena"
+          data-placeholder-original="Confirmar Contraseña" placeholder="Confirmar Contraseña" required>
+        </div>
+        <div class="form__content">
+          <div class="form__content-extra">
+            <p class="text text--tamanio_reducido">¿Ya tienes cuenta?</p>
+            <a href="login.html" class="link link--verde_menta-subrayado">Inicia sesión aquí</a>
+          </div>
+        </div>
+        <button id="btnCrearCuenta" class="button button--gradient-verde-agua_turquesa-oscuro" type="submit">Crear Cuenta</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="../js/crearUser.js"></script>
+</body>
+
+</html>

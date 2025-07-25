@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRINCIPAL-ADMINISTRADOR</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="shortcut icon" href="../images/letra_logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+</head>
+<body>
+  <header class="header header--static">
+    <div class="header-container header-nav--sin_gradiente">
+      <div class="header-content header-content--sin_borde_redondeado">
+        <img class="img img--tamanio_reduccion" src="../images/logo_completo.png" alt="logo">
+        <nav class="nav">
+          <ul class="nav-content__list">
+            <li class="nav-content__list-item">
+              <a class="link link--turquesa_oscuro-texto_sin_sombra" href="vistaAministrador.html">Inicio</a>
+            </li>
+            <div class="nav-content__list-item nav-content__list-item--busqueda nav-content__list-item--ancho">
+              <iconify-icon icon="lets-icons:search-duotone" class="icon"></iconify-icon>
+              <input class="input input--sin_borde-sin_sombra" type="search" id="busqueda" name="busqueda"
+                placeholder="Buscar artículos por nombre o categoría" required>
+            </div>
+          </ul>
+        </nav>
+        <div class="nav-content__list-item">
+          <div class="header-content__user">
+            <input class="input__check" type="checkbox" id="activo">
+            <label for="activo" class="label__icon">
+              <iconify-icon icon="mdi:user-tie" class="icon icon--tamanio_aumentado"></iconify-icon>
+            </label>
+            <!-- PANEL USUARIO  -->
+            <div class="panel-user">
+              <div class="panel__close-container">
+                <label for="activo" class="panel__close">
+                  <iconify-icon icon="material-symbols:close-small-outline-rounded" class="icon icon--cerrar-panel"></iconify-icon>
+                </label>
+              </div>
+              <div class="panel__top">
+                <div class="panel__content panel__content--sin_hover">
+                  <div class="panel__content-profile">
+                    <h1 class="title-principal title-principal--tamanio_reduccion_sin_sombra">Dylan Slebyng Bravo Becerra
+                    </h1>
+                    <a href="vistaAministrador.html" class="link link--subrayado_verde_menta">Actualizar Perfil</a>
+                  </div>
+                  <iconify-icon icon="mdi:user-tie" class="icon icon--tamanio_aumentado"></iconify-icon>
+                </div>
+                <a href="vistasAdmin/gestionUsuarios.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="clarity:group-solid"
+                    class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Gestión de Usuarios</h3>
+                </a>
+                <a href="vistaAministrador.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="mdi:clipboard-edit-outline" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Gestión de Artículos</h3>
+                </a>
+              </div>
+              <div class="panel__bottom">
+                <a href="#" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="codicon:sign-out" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Cerrar Sesion</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="content-table">
+    <h1 class="title-principal title-principal--centrado-disminuido">Gestión de Artículos</h1>
+    <div class="table-container">
+      <table class="table">
+        <thead class="table__encabezado">
+          <tr class="table__fila">
+            <th class="table__celda">ID</th>
+            <th class="table__celda">Nombre</th>
+            <th class="table__celda">Precio</th>
+            <th class="table__celda">Categoría</th>
+            <th class="table__celda">Ciudad</th>
+            <th class="table__celda">Condición</th>
+            <th class="table__celda">Estado</th>
+            <th class="table__celda">Stock</th>
+            <th class="table__celda">Vendedor</th>
+            <th class="table__celda">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="table__cuerpo">
+          <tr class="table__fila table__fila--turquesa-opaco">
+            <td class="table__celda table__celda--dato">1</td>
+            <td class="table__celda table__celda--dato">Jordan 1 Retro</td>
+            <td class="table__celda table__celda--precio table__celda--dato">$350.000</td>
+            <td class="table__celda table__celda--dato">Ropa</td>
+            <td class="table__celda table__celda--dato">Bucaramanga</td>
+            <td class="table__celda table__celda--dato">Seminuevo</td>
+            <td class="table__celda table__celda--dato table__celda--activo">Activo</td>
+            <td class="table__celda table__celda--dato">5</td>
+            <td class="table__celda table__celda--dato">Dylan Bravo</td>
+            <td class="table__celda table__celda--flex-columna table__celda--dato">
+              <button class="button button--gradiente-agua-turquesa button--gradiente-ambar btnEditarArticuloAdmin">
+                  <iconify-icon icon="mdi:pencil-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                  EDITAR
+              </button>
+              <button class="button button--gradiente-agua-turquesa button--gradiente-rojo">
+                  <iconify-icon icon="mdi:trash-can-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                  ELIMINAR
+              </button>
+            </td>
+          </tr>
+          <tr class="table__fila table__fila--turquesa-opaco">
+            <td class="table__celda table__celda--dato">2</td>
+            <td class="table__celda table__celda--dato">iPhone 13</td>
+            <td class="table__celda table__celda--precio table__celda--dato">$2.300.000</td>
+            <td class="table__celda table__celda--dato">Tecnología</td>
+            <td class="table__celda table__celda--dato">Medellín</td>
+            <td class="table__celda table__celda--dato">Nuevo</td>
+            <td class="table__celda table__celda--dato table__celda--inactivo">Inactivo</td>
+            <td class="table__celda table__celda--dato">0</td>
+            <td class="table__celda table__celda--dato">Laura Castaño</td>
+            <td class="table__celda table__celda--flex-columna table__celda--dato">
+              <button class="button button--gradiente-agua-turquesa button--gradiente-ambar btnEditarArticuloAdmin">
+                <iconify-icon icon="mdi:pencil-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                EDITAR
+              </button>
+              <button class="button button--gradiente-agua-turquesa button--gradiente-rojo">
+                <iconify-icon icon="mdi:trash-can-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                ELIMINAR
+              </button>
+            </td>
+          </tr>
+          <tr class="table__fila table__fila--turquesa-opaco">
+            <td class="table__celda table__celda--dato">3</td>
+            <td class="table__celda table__celda--dato">Xbox Series X</td>
+            <td class="table__celda table__celda--precio table__celda--dato">$2.000.000</td>
+            <td class="table__celda table__celda--dato">Videojuegos</td>
+            <td class="table__celda table__celda--dato">Bogotá</td>
+            <td class="table__celda table__celda--dato">Usado</td>
+            <td class="table__celda table__celda--dato table__celda--pendiente">Pendiente</td>
+            <td class="table__celda table__celda--dato">2</td>
+            <td class="table__celda table__celda--dato">Carlos Pérez</td>
+            <td class="table__celda table__celda--flex-columna table__celda--dato">
+              <button class="button button--gradiente-agua-turquesa button--gradiente-ambar btnEditarArticuloAdmin">
+                <iconify-icon icon="mdi:pencil-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                EDITAR
+              </button>
+              <button class="button button--gradiente-agua-turquesa button--gradiente-rojo">
+                <iconify-icon icon="mdi:trash-can-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                ELIMINAR
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+ <!-- Modal editar informacion que publico el vendedor -->
+  <section class="modal" id="modalEditarArticulo">
+    <div class="modal__container modal__container--ampliado modal__container--sin-espaciado">
+      <!-- Header -->
+      <div class="modal__header">
+        <h1 class="title-principal title-principal--turquesa-medio">Actualizar Articulo</h1>
+      </div>
+
+      <div class="modal__body modal__body--ancho-completo">
+        <form id="form-create-articulo" method="post" class="form form--ancho_aumentado form--sin-estilo-visual" enctype="multipart/form-data"
+          novalidate>
+    
+          <div class="form__content">
+            <label for="imagen" class="input input--files"></label>
+            <input class="input input--oculto" type="file" id="imagen" name="imagenes" accept="image/*" multiple required>
+          </div>
+    
+          <div class="form__content">
+            <input class="input" type="text" id="nombre_articulo" name="nombre_articulo" placeholder="Nombre del artículo"
+              required>
+          </div>
+    
+          <div class="form__content">
+            <input class="input" type="number" id="precio_articulo" name="precio_articulo" placeholder="Precio" step="0.01"
+              min="0" required>
+          </div>
+    
+          <div class="form__content">
+            <textarea class="input input--textarea" id="condicion_articulo" name="condicion_articulo" rows="4"
+              placeholder="Describe la condición del artículo (nuevo, usado, con detalles, etc.)" required></textarea>
+          </div>
+    
+          <div class="form__content">
+            <select class="select" id="categoria" name="id_categoria" required>
+              <option class="option" value="">Selecciona una categoría</option>
+              Estas opciones deben son llenadas dinámicamente desde la base de datos
+            </select>
+          </div>
+          <div class="form__content">
+            <input class="input" type="number" id="stock" name="stock" placeholder="Stock disponible" min="1" required>
+          </div>
+
+          <div class="modal__botones modal__botones--ancho-limitado">
+            <button class="button button--gradiente-agua-turquesa button--ancho-amplio"
+              id="cerrarModal">
+              <iconify-icon icon="solar:refresh-bold" class="icon icon--blanco-agrandado"></iconify-icon>
+              Actualizar
+            </button>
+            <button class="button button--gradiente-agua-turquesa button--gradiente-rojo button--ancho-amplio"
+              id="cerrarModalEditarAdmin">
+              <iconify-icon icon="iconamoon:close-circle-1-light" class="icon icon--blanco-agrandado"></iconify-icon>
+              Cerrar
+            </button>
+          </div>
+        </form>
+      
+      </div>
+    </div>
+  </section>
+  <script type="module" src="../js/admin/detallesArticulosUsuarios.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOTIFICACIONES</title>
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="shortcut icon" href="../../images/letra_logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+</head>
+<body>
+  <header class="header header--static">
+    <div class="header-container header-nav--sin_gradiente">
+      <div class="header-content header-content--sin_borde_redondeado">
+        <img class="img img--tamanio_reduccion" src="../../images/logo_completo.png" alt="logo">
+        <nav class="nav">
+          <ul class="nav-content__list">
+            <li class="nav-content__list-item">
+              <a class="link link--turquesa_oscuro-texto_sin_sombra" href="../vistaComprador.html">Inicio</a>
+            </li>
+            <li class="nav-content__list-item">
+              <a class="link link--turquesa_oscuro-texto_sin_sombra" href="">Categoria</a>
+              <div class="nav-content__panel">
+                <a href="#" class="link link--blanco-disminuido">Moda</a>
+                <a href="#" class="link link--blanco-disminuido">Tecnología</a>
+                <a href="#" class="link link--blanco-disminuido">Hogar</a>
+                <a href="#" class="link link--blanco-disminuido">Otros</a>
+              </div>
+            </li>
+            <li class="nav-content__list-item">
+              <a class="link link--turquesa_oscuro-texto_sin_sombra" href="">Ciudad</a>
+              <div class="nav-content__panel nav-content__panel--derecha">
+                <a href="#" class="link link--blanco-disminuido">Bucaramanga</a>
+                <a href="#" class="link link--blanco-disminuido">Piedecuesta</a>
+                <a href="#" class="link link--blanco-disminuido">Giron</a>
+              </div>
+            </li>
+            <div class="nav-content__list-item nav-content__list-item--busqueda">
+              <iconify-icon icon="lets-icons:search-duotone" class="icon"></iconify-icon>
+              <input class="input input--sin_borde-sin_sombra" type="search" id="busqueda" name="busqueda"
+                placeholder="Buscar artículos..." required>
+            </div>
+          </ul>
+        </nav>
+        <div class="nav-content__list-item">
+          <div class="header-content__user">
+            <input class="input__check" type="checkbox" id="activo">
+            <label for="activo" class="label__icon">
+              <iconify-icon icon="ph:user-circle-light" class="icon icon--tamanio_aumentado"></iconify-icon>
+            </label>
+            <!-- PANEL USUARIO  -->
+            <div class="panel-user">
+              <div class="panel__close-container">
+                <label for="activo" class="panel__close">
+                  <iconify-icon icon="material-symbols:close-small-outline-rounded" class="icon icon--cerrar-panel"></iconify-icon>
+                </label>
+              </div>
+              <div class="panel__top">
+                <div class="panel__content panel__content--sin_hover">
+                  <div class="panel__content-profile">
+                    <h1 class="title-principal title-principal--tamanio_reduccion_sin_sombra">Dylan Slebyng Bravo Becerra
+                    </h1>
+                    <a href="../actualizarPerfilUsuario.html" class="link link--subrayado_verde_menta">Actualizar Perfil</a>
+                  </div>
+                  <iconify-icon icon="ph:user-circle-light" class="icon icon--tamanio_aumentado"></iconify-icon>
+                </div>
+                <a href="HistorialCompras.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="clarity:shopping-bag-line"
+                    class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Mis Compras</h3>
+                </a>
+                <a href="HistorialNotificaciones.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="streamline-plump:ringing-bell-notification" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Notificaciones</h3>
+                </a>
+                <a href="HistorialComentarios.html" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="fluent:chat-24-regular" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Comentarios</h3>
+                </a>
+              </div>
+              
+              <div class="panel__bottom">
+                <a href="" class="panel__content panel__content--fondo-azul-palido">
+                  <iconify-icon icon="codicon:sign-out" class="icon icon--panel-tamanio_aumentado"></iconify-icon>
+                  <h3 class="title-principal title-principal--sin_sombra">Cerrar Sesion</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- CONTENIDO DEL CARRO -->
+  <main class="container">
+    <h1 class="title-principal title-principal--centrado-disminuido">Notificaciones</h1>
+    <section class="layout layout--carrito">
+      <div class="card card--horizontal">
+        <div class="card__container-img">
+            <img class="img img--sin_efecto_hover img--alto-completo" src="../../images/zapatos.png" alt="producto">
+        </div>
+        <div class="card__content">
+            <div class="card__title-container card__title-container--compacto">
+              <h1 class="title-principal title-principal--beige-sin_sombra title-principal--turquesa_oscuro">Jordan 1 Retro</h1>
+            </div>
+    
+            <div class="card__details card__details--compacto">
+                <p class="text text--no_desborda text--turquesa-oscuro"><strong class="strong strong--resaltado-verde-menta">Usuario:</strong> Raul Menendez</p>
+                <p class="text text--no_desborda text--turquesa-oscuro"><strong class="strong strong--resaltado-verde-menta">Fecha Notificación:</strong> 2025-07-18 15:30</p>
+                <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento text--limite-multilinea"><strong
+                    class="strong strong--resaltado-verde-menta">Notificación:</strong>Hola Luis, gracias por tu compra. Queríamos
+                  informarte que el color de las Jordan 1 Retro que adquiriste puede variar ligeramente respecto a las imágenes, ya que
+                  son fotos de referencia del proveedor. Sin embargo, garantizamos que el producto es original y está en excelente
+                  estado. ¡Gracias por tu comprensión!
+                </p>
+            </div>
+        </div>
+
+        <div class="card__buttons card__buttons--vertical">
+            <button class="button button--gradiente-agua-turquesa btnDetalleNotificacion">
+                <iconify-icon icon="mdi:information-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                Ver Detalles
+            </button>
+            <button class="button button--gradiente-agua-turquesa button--gradiente-rojo">
+                <iconify-icon icon="mdi:trash-can-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+                Eliminar Notificación
+            </button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+    <!-- Modal -->
+  <section class="modal" id="modalNotificaciones">
+    <div class="modal__container modal__container--ampliado">
+      <!-- Header -->
+      <div class="modal__header">
+        <h1 class="title-principal title-principal--turquesa-medio">Jordan Retro 1</h1>
+      </div>
+
+      <div class="modal__body">
+        <!-- Información del artículo -->
+        <div class="modal__info-articulo">
+          <div class="modal__fotos modal__fotos--carrusel">
+            <img class="img img--sin_efecto_hover img--alto-completo img--carrusel" src="../../images/zapatos.png" alt="producto">
+            <div class="modal__carrusel-botones">
+              <button class="button button--gradiente-agua-turquesa button--ancho-amplio button--centrado btnIzquierda">
+                <iconify-icon icon="mi:chevron-double-left" class="icon icon--blanco-agrandado icon--sin-espacio-derecho"></iconify-icon>
+              </button>
+              <button class="button button--gradiente-agua-turquesa button--ancho-amplio button--centrado btnDerecha">
+                <iconify-icon icon="mi:chevron-double-right" class="icon icon--blanco-agrandado icon--sin-espacio-derecho"></iconify-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="modal__detalle-articulo">
+            <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Precio:</strong> $350.000</p>
+            <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Condición:</strong> Usado - Excelente estado, sin manchas ni daños</p>
+            <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Stock:</strong> 2 unidades</p>
+            <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Categoría:</strong> Moda</p>
+            <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Descripción:</strong> Camiseta original Adidas edición 1998. Ideal para coleccionistas 
+              o amantes del estilo retro. Tela fresca y sin desgaste. Talla M.</p>
+          </div>
+        </div>
+
+        <!-- Información del vendedor -->
+        <div class="modal__vendedor">
+          <h3 class="subtitle">Publicado por</h3>
+          <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Nombre:</strong> Carla Fernández</p>
+          <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Correo:</strong> carla.vendedor@example.com</p>
+          <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Teléfono:</strong> 3024567890</p>
+          <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong class="strong strong--resaltado-verde-menta">Ciudad:</strong> Girón</p>
+        </div>
+        <div class="modal__vendedor">
+          <h3 class="subtitle">Mensaje del vendedor</h3>
+          <p class="text text--no_desborda text--turquesa-oscuro"><strong class="strong strong--resaltado-verde-menta">Fecha
+              Notificación:</strong> 2025-07-18 15:30</p>
+          <p class="text text--no_desborda text--turquesa-oscuro text--desbordamiento"><strong
+              class="strong strong--resaltado-verde-menta">Notificación:</strong>Hola Luis, gracias por tu compra. Queríamos
+            informarte que el color de las Jordan 1 Retro que adquiriste puede variar ligeramente respecto a las imágenes, ya
+            que son fotos de referencia del proveedor. Sin embargo, garantizamos que el producto es original y está en excelente
+            estado.
+            ¡Gracias por tu comprensión!
+          </p>
+        </div>
+
+        <!-- Formulario para agregar comentario -->
+        <div class="modal__comentario-nuevo">
+          <div class="modal__botones">
+            <button class="button button--gradiente-agua-turquesa button--gradiente-rojo button--ancho-amplio">
+              <iconify-icon icon="mdi:trash-can-outline" class="icon icon--blanco-agrandado"></iconify-icon>
+              Eliminar Notificación
+            </button>
+            <button class="button button--gradiente-agua-turquesa button--gradiente-rojo button--ancho-amplio" id="cerrarModal">
+              <iconify-icon icon="iconamoon:close-circle-1-light" class="icon icon--blanco-agrandado"></iconify-icon>
+              Cerrar
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="../../JS/comprador/detallesNotificaciones.js"></script>
+</body>
+</html>

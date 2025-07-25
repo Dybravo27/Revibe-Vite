@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url(home.css);
+@import url(form.css);
+@import url(form-login.css);
+@import url(productos.css);
+@import url(table.css);
+@import url(modal.css);
+@import url(carrusel.css);
+@import url(factura.css);
+/* =================== ESTILOS GENERALES =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fuente-principal); /* Fuente definida en :root */
+}
+
+.html-content {
+  scroll-behavior: smooth; /* Suaviza el desplazamiento */
+}
+
+*::selection {
+  background-color: var(--turquesa-medio); /* Color al seleccionar texto */
+  color: var(--blanco);
+}
+/* =================== VARIABLES =================== */
+:root {
+  /* Colores principales */
+  --blanco: #fff;
+  --negro: #000;
+  --negro-opaco: rgba(0, 0, 0, 0.25);
+  --negro-suave: rgba(0, 0, 0, 0.1);
+  --verde-menta: #42E695;
+  --verde-pasto:  #28B463;
+  --verde-brillante: #00C853;
+  --lima-claro: #64DD17;
+  --celeste-suave: #81D4FA;
+  --azul-cielo: #4FC3F7;
+  --verde-marino-opaco:rgba(0, 128, 128, 0.8);
+  --turquesa-medio: #3BB2B8;
+  --turquesa-opaco: rgba(160, 212, 214, 0.416);
+  --turquesa-oscuro: #006A71;
+  --turquesa-oscuro-opaco: rgba(0, 106, 113, 0.1);
+  --verde-agua-medio: #48A6A7;
+  --azul-palido: #9ACBD0;
+  --beige-claro: #F2EFE7;
+  --amarillo-ambar: #ffc107;
+  --dorado: #FFD700;
+  --naranja-claro: #ff9800;
+  --rojo-claro: #ff4e4e;
+  --rojo-oscuro: #d40000;
+  --rojo-fondo-error: #f8d7da;
+  --transparente: transparent;
+  --gris: #666;
+
+  /* Tipografía principal */
+  --fuente-principal: "Nixie One", system-ui;
+}
+/* =================== SCROLLBAR =================== */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--beige-claro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--turquesa-medio), var(--verde-menta));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--verde-menta), var(--turquesa-medio));
+}

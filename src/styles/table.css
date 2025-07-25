@@ -1,0 +1,98 @@
+ /* Estilo general del contenedor */
+.content-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 10vh);
+  background-color: var(--beige-claro);
+  gap: 1rem;
+  padding: 0 2rem;
+}
+.table-container {
+  width: 100%;
+  max-width: 100%;
+  max-height: 70vh;
+  overflow: auto;
+  border-radius: 8px;
+  border: solid 2px var(--azul-palido);
+  background-color: var(--blanco);
+}
+/* Scrollbar vertical (ancho) y horizontal (alto) */
+.table-container::-webkit-scrollbar {
+  width: 7px;   /* vertical */
+  height: 7px;  /* horizontal */
+}
+
+/* Track (fondo del scrollbar) */
+.table-container::-webkit-scrollbar-track {
+  background-color: var(--transparente);
+}
+
+
+/* Tabla */
+.table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+/* Encabezado */
+.table__encabezado {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background-color: var(--turquesa-oscuro);
+  color: var(--blanco);
+}
+
+/* Fila */
+.table__fila {
+  border-bottom: 2px solid var(--azul-palido);
+}
+
+/* Celdas */
+.table__celda {
+  padding: 0.7rem 1rem;
+  color: var(--blanco);
+  font-weight: 900;
+  font-size: 1.38rem;
+  text-align: center;
+  white-space: nowrap;       /* evita saltos de línea */
+  overflow: hidden;          /* oculta el exceso */
+  text-overflow: ellipsis;   /* agrega "..." al final */
+  max-width: 250px;          /* ajusta según necesidad */
+}
+.table__fila--turquesa-opaco:hover{
+  background-color: var(--turquesa-opaco);
+}
+.table__celda--dato{
+  font-size: 1.28rem;
+  color: var(--turquesa-oscuro);
+}
+.table__celda--flex-columna {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Precio */
+.table__celda--precio {
+  color: var(--negro);
+}
+
+/* Estado */
+.table__celda--activo {
+  color: var(--verde-pasto);
+  font-weight: bold;
+}
+.table__celda--inactivo {
+  color: var(--rojo-claro);
+  font-weight: bold;
+}
+.table__celda--pendiente {
+  color: var(--amarillo-ambar);
+  font-weight: bold;
+}

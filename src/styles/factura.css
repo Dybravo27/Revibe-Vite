@@ -1,0 +1,79 @@
+
+.content-table--alto-completo{
+  height: 100vh;
+}
+.factura{
+  width: 55%;
+  height: 95%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 3px var(--negro-opaco);
+  padding: 30px;
+}
+.title-principal--fondo-transparente{
+  background-color: var(--transparente);
+  font-size: 2.5rem;
+}
+.factura__scroll-container{
+  /* flex-grow: 3    → Este elemento tomará 3 partes de espacio adicional disponible, comparado con otros elementos hermanos. */
+  /* flex-shrink: 1  → Puede encogerse si no hay suficiente espacio en el contenedor. */
+  /* flex-basis: 0   → Su tamaño inicial antes de aplicar grow/shrink será 0. Es decir, el espacio se reparte completamente según el grow. */
+  flex: 3 1 0;
+  overflow: auto;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 0 5px var(--negro-suave);
+  border: solid 2px var(--celeste-suave);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.factura__scroll-container::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+.factura__scroll-container::-webkit-scrollbar-track{
+  background-color: var(--transparente);
+}
+.factura__detalle {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 18px;
+  border-bottom: solid 1px var(--gris);
+  padding: 0 0 1rem 0;
+}
+.factura__vendedor-info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+.factura__pago {
+  /* flex-grow: 1    → Este elemento tomará 1 parte del espacio adicional. Como el anterior tiene 3, la proporción será 3:1. */
+  /* flex-shrink: 1  → Puede encogerse igual que el anterior si no hay espacio. */
+  /* flex-basis: 0   → Su tamaño base es 0, así que todo el espacio se reparte por grow. */
+  flex: 1 1 0;
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.factura__pago-info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+.factura__botones{
+  display: inline-flex;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

@@ -1,0 +1,156 @@
+.content-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--turquesa-oscuro);
+}
+.section-container{
+  position: relative;
+  width: 35%;
+  height: 86.5%;
+  background-color: var(--beige-claro);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 8px 24px var(--negro-opaco);
+  animation: mostrarDesdeDerecha 1s;
+}
+/* MODIFICACION DEL LOGO EN EL FORM */
+.img--centrado-sombra_verde_menta{
+  display: block;
+  margin: 0 auto;
+  width: 12vw;
+  padding-bottom: 1rem;
+  animation: mostrarDesdeDerecha 1.2s;
+}
+.img--centrado-sombra_verde_menta:hover{
+  transform: none;
+  filter: drop-shadow(0 0 10px var(--verde-menta));
+}
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35vw;
+  background-color: var(--blanco);
+  box-shadow: 0 4px 12px var(--negro-opaco);
+  border-radius: 10px;
+  padding: 20px;
+  animation: mostrarDesdeDerecha 1.4s;
+}
+/* MODIFICACION DEL TITULO PRINCIPAL EN EL FORM */
+.title-principal--turquesa-medio{
+  font-size: 2.3rem;
+  color: var(--turquesa-medio);
+  text-shadow: none;
+}
+.input, .select{
+  width: 25vw;
+  border-radius: 5px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  color: var(--turquesa-oscuro);
+  border: 2px solid var(--verde-agua-medio);
+  padding: 0.6rem;
+  box-shadow: 0 0 3px var(--turquesa-medio);
+  outline: none;
+  background-color: var(--blanco);
+  animation: mostrarDesdeDerecha 1.2s;
+}
+.input::placeholder{
+  color: var(--turquesa-oscuro);
+  transition: all 0.2s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+.input:focus {
+  border-color: var(--turquesa-medio);
+  box-shadow: 0 0 8px var(--azul-palido);
+}
+.input:focus::placeholder {
+  transform: translateY(-1.2rem);
+  opacity: 0;
+}
+.option{
+  color: var(--turquesa-oscuro);
+  font-weight: 600;
+}
+/* MODIFICACION DEL BOTON EN EL FORM */
+.button--gradient-verde-agua_turquesa-oscuro{
+  width: 25vw;
+  height: 5vh;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--verde-agua-medio), var(--turquesa-oscuro));
+  color: var(--blanco);
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  animation: mostrarDesdeDerecha 1.6s;
+}
+.button--gradient-verde-agua_turquesa-oscuro:hover{
+  background: var(--blanco);
+  color: var(--turquesa-oscuro);
+  border: 2px solid var(--turquesa-oscuro);
+  box-shadow: 0 6px 12px var(--azul-palido);
+  transform: translateY(-2px);
+}
+.button--gradient-verde-agua_turquesa-oscuro:hover > .icon--blanco-agrandado{
+  color: var(--turquesa-oscuro);
+}
+/* MODIFICACION PARA EL FORMULARIO datosUsuario */
+.container-user{
+  position: absolute;
+  top: -45px;
+  left: 40%;
+  width: 115px;
+  height: 115px;
+  min-width: 100px;
+  max-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--beige-claro);
+  border-radius: 50%;
+  z-index: 5;
+}
+.container-user .icon--user-agrandado{
+  padding: 0;     
+  font-size: 7rem;
+}
+.form--espaciado_arriba{
+  margin-top: 12%;
+}
+
+@keyframes mostrarDesdeDerecha {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ESTILOS DE ERRORES PARA EL FORMULARIO DE CREAR CUENTA */
+.input--error{
+  border: 2px solid var(--rojo-oscuro);
+  box-shadow: 0 0 3px var(--rojo-oscuro);
+  background-color: var(--rojo-fondo-error);
+}
+.input--error::placeholder{
+  color: var(--rojo-oscuro);
+}
+.select--error{
+  color: var(--rojo-oscuro);
+  border: 2px solid var(--rojo-oscuro);
+  box-shadow: 0 0 3px var(--rojo-oscuro);
+  background-color: var(--rojo-fondo-error);
+}
+.option--error{
+  color: var(--rojo-oscuro);
+  font-weight: 600;
+  background-color: var(--rojo-fondo-error);
+}

@@ -1,0 +1,57 @@
+/* ===== CARRUSEL ===== */
+.modal__fotos--carrusel {
+  max-width: 252px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.img--carrusel {
+  height: 76%;
+  object-fit: cover;
+  border: solid 3px var(--celeste-suave);
+}
+
+.modal__carrusel-botones {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.button--centrado{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon--sin-espacio-derecho{
+  padding: 0;
+}
+.text--limite-multilinea {
+  /* Esto define que el contenedor use un modelo de caja flexible de tipo caja en bloque (similar a flex, pero orientado a texto) */
+  display: -webkit-box; /* Contenedor flexible necesario para aplicar truncamiento */
+  -webkit-line-clamp: 4; /* Establece el número máximo de líneas que se deben mostrar. El texto que exceda estas 4 líneas será ocultado */
+  /* Define la orientación de la caja para que fluya en dirección vertical (de arriba hacia abajo). Es un requerimiento para que -webkit-line-clamp funcione correctamente */
+  -webkit-box-orient: vertical; /* Orienta el contenido en columnas verticales */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde fuera del área visible del contenedor */
+  max-width: 320px; /* Establece un ancho máximo del contenedor, lo cual es importante para que el clamping tenga un límite donde aplicar el corte */
+  text-overflow: ellipsis; /* Muestra puntos suspensivos cuando se corta el texto */
+}
+.form__container-botones{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+.form__button-wrapper{
+  width: 86%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.form__delete-button-wrapper{
+  display: flex;
+  width: 85%;
+  gap: 10px;
+}

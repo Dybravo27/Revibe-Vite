@@ -1,0 +1,286 @@
+/* =================== MODAL GENERAL =================== */
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--verde-marino-opaco); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+  transition: opacity 0.4s;
+}
+/* Mostrar modal */
+.modal--show{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s;
+}
+/* Contenedor principal del modal */
+.modal__container{
+  width: 40%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: var(--blanco);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.section-container--fondo-turquesa-oscuro{
+  background-color: var(--turquesa-oscuro);
+}
+/* =================== VARIACIÓN DEL MODAL (más ancho) =================== */
+.modal__container--ampliado {
+  width: 60%;
+  max-width: 700px;
+}
+/* =================== HEADER DEL MODAL =================== */
+.modal__header {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtitle {
+  color: var(--turquesa-oscuro);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+/* =================== CUERPO DEL MODAL =================== */
+.modal__body {
+  padding: 0 1.5rem 1rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  max-width: 600px;
+  max-height: 535px;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* Scroll personalizado dentro del modal */
+.modal__body::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+.modal__body::-webkit-scrollbar-track{
+  background-color: var(--transparente);
+}
+
+/* =================== INFORMACIÓN DEL ARTÍCULO =================== */
+.modal__info-articulo {
+  display: flex;
+  width: 100%;
+  max-width: 548px;
+  max-height: 200px;
+  gap: 1rem;
+}
+
+/* Imágenes del Articulo */
+.modal__fotos {
+  width: 50%;
+  display: flex;
+  gap: 0.5rem;
+  object-fit: cover;
+}
+/* Descripción del artículo */
+.modal__detalle-articulo {
+  width: 55%;
+  max-height: 200px;
+  max-width: 100%;
+  padding: 8px;
+  overflow: auto;              /* Bien: permite scroll si se desborda */
+  word-wrap: break-word;       /* Rompe palabras largas */
+  white-space: normal;         /* Permite saltos de línea */
+}
+.modal__detalle-articulo::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+.modal__detalle-articulo::-webkit-scrollbar-track{
+  background-color: var(--transparente);
+}
+/* Texto con desbordamiento permitido */
+.text--desbordamiento{
+  white-space: normal;       /* Permite saltos de línea */
+  overflow: visible;         /* Deja que el contenido se expanda */
+  text-overflow: unset;      /* Ya no necesitas ellipsis */
+  max-width: none;
+}
+/* =================== COMENTARIOS =================== */
+.modal__comentarios-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Contenedor scrollable de comentarios */
+.modal__comentarios-scroll{
+  width: 100%;
+  max-height: 250px;
+  overflow: auto;
+  word-wrap: break-word;
+  padding-right: 8px;
+}
+/* Scroll dentro de los comentarios */
+.modal__comentarios-scroll::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+
+.modal__comentarios-scroll::-webkit-scrollbar-track{
+  background-color: var(--transparente);
+}
+/* Lista de comentarios */
+.modal__comentarios {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+/* Comentario individual */
+.modal__item-comentario{
+  background-color: var(--azul-palido);
+  border-radius: 5px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-height: 115px;
+  max-width: 630px;
+  overflow: auto;
+  word-wrap: break-word;
+}
+/* Scroll en cada comentario */
+.modal__item-comentario::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+.modal__item-comentario::-webkit-scrollbar-track{
+  background-color: var(--transparente);
+}
+/* =================== VARIACIÓN DEL COMENTARIO (Fondo color verde-marino-opaco) =================== */
+.modal__item-comentario--fondo-verde_marino_opaco{
+  background-color: var(--verde-marino-opaco);
+}
+/* =================== VARIACIÓN DE LOS TEXTOS (Colores dorado, rojo-claro, blanco, negro, beige-claro) =================== */
+.text--dorado{
+  color: var(--dorado);
+}
+.text--rojo_claro{
+  color: var(--rojo-claro);
+}
+.strong--blanco{
+  color: var(--blanco);
+}
+.text--negro{
+  color: var(--negro);
+}
+.text--beige-claro{
+  font-size: 0.85rem;
+  color: var(--beige-claro);
+}
+
+/* =================== FORMULARIO: AGREGAR COMENTARIO =================== */
+
+.modal__comentario-nuevo {
+  border-top: 1px solid var(--gris);
+  padding-top: 1rem;
+}
+/* =================== VARIACIÓN DEL FORMULARIO (ancho completo) =================== */
+.form--ancho_completo{
+  align-items: start;
+  width: 100%;
+  height: 50%;
+  box-shadow: none;
+  animation: none;
+  padding: 0;
+  padding-top: 20px;
+  border-radius: 0;
+  gap: 15px;
+  background-color: var(--transparente);
+}
+/* Campo del textarea */
+.modal__comentario-campo{
+  width: 100%;
+}
+/* Textarea de comentario */
+.input--comentario-textarea{
+  width: 100%;
+  min-height: 41px;
+  max-height: 200px;
+  border: 1px solid var(--turquesa-oscuro);
+  box-shadow: 0 0 3px var(--verde-marino-opaco);
+  background-color: var(--transparente);
+}
+/* Contenedor de calificación + botón */
+.modal__calificacion-campo{
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Grupo input de calificación */
+.modal__calificacion-input-group{
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+/* Input con ancho del 50% */
+.input--mitad-ancho {
+  width: 50%;
+}
+
+/* Botón con ancho del 70% */
+.button--ancho-amplio {
+  width: 70%;
+}
+/* Botonera inferior del modal */
+.modal__botones{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.button--verde-brillante-lima {
+  background: linear-gradient(135deg, var(--verde-brillante), var(--lima-claro));
+}
+
+.button--celeste-azul-cielo {
+  background: linear-gradient(135deg, var(--celeste-suave), var(--azul-cielo));
+}
+
+/* =================== FIN: ESTRUCTURA DEL MODAL =================== */
+
+/* MODIFICACIONES EN LA VISTA DEL VENDEDOR AL ACTUALIZAR EL ARTICULO */
+
+.modal__container--sin-espaciado {
+  gap: 0;
+}
+
+.modal__body--ancho-completo {
+  width: 100%;
+}
+
+.form--sin-estilo-visual {
+  animation: none;
+  box-shadow: none;
+  padding: 10px;
+}
+
+.modal__botones--ancho-limitado {
+  width: 72.5%;
+}
