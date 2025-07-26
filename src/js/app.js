@@ -43,8 +43,6 @@ export const obtenerUsuarios = async () => {
     // Convierte la respuesta a formato JSON
     const data = await response.json();
 
-    // Muestra los datos recibidos en la consola
-    console.log(data);
     return data;
 
   } catch (error) {
@@ -75,7 +73,6 @@ export const crearUsuario = async (nuevoUsuario) => {
     // }
     // Si la creación es exitosa, retornar los datos del usuario
     const data = await response.json();
-    console.log("Usuario creado:", data);
     alert("Usuario creado exitosamente");
     return data;
   } catch (error) {
@@ -167,7 +164,6 @@ export const crearImagen = async (formData) => {
       throw new Error(error);
     }
 
-    console.log("Artículo e imagen creados:", data);
     return data;
 
   } catch (error) {
