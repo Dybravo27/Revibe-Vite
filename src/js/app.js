@@ -1,28 +1,49 @@
 const BASE_URL = "http://localhost:8080/Proyecto_Dylan_ReVibe/api";
 
-export const loginUsuario = async (usuario) => {
-  try {
-    const response = await fetch(`${BASE_URL}/usuarios/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(usuario)
-    });
+export async function loginUsuario(usuario) {
+    try {
+        const response = await fetch(`${BASE_URL}/usuarios/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
 
-    if (!response.ok) {
-      if (response.status === 401) {
-        throw new Error("Correo o contraseña incorrectos");
-      }
-      throw new Error("Error en la solicitud: " + response.status);
+        const resultado = await response.json();
+
+        // Validar errores devueltos por el backend
+        if (!response.ok) {
+            throw new Error(resultado.error || "Error al iniciar sesión.");
+        }
+
+        if (resultado.idUsuario) {
+            // Limpiar posibles datos anteriores
+            localStorage.removeItem("usuarioId");
+            localStorage.removeItem("usuario");
+
+            // Guardar el ID del usuario logueado
+            localStorage.setItem("usuarioId", resultado.idUsuario);
+
+            // Guardar el usuario completo como string (puedes usar esto para otras validaciones)
+            localStorage.setItem("usuario", JSON.stringify(resultado));
+
+            // Mostrar el localStorage actualizado
+            const allLocalStorage = {
+                usuarioId: localStorage.getItem("usuarioId"),
+                usuario: localStorage.getItem("usuario")
+            };
+            console.log("Usuario guardado correctamente en localStorage:\n", allLocalStorage);
+
+            return resultado; // Objeto del usuario
+        } else {
+            throw new Error("No se pudo obtener el ID del usuario.");
+        }
+    } catch (error) {
+        console.error("Error en loginUsuario:", error);
+        throw error;
     }
-
-    const data = await response.json();
-    return data; // ← Devolver los datos del usuario
-  } catch (error) {
-    throw error; // ← Dejar que el listener lo maneje
-  }
-};
+}
 
 // Función asincrónica que obtiene la lista de usuarios desde el servidor
 export const obtenerUsuarios = async () => {
@@ -184,5 +205,27 @@ export const obtenerCategorias = async () => {
   } catch (error) {
     console.error("Error al obtener roles:", error);
     return [];
+  }
+};
+
+// Obtener la lista de productos y renderizarlos
+export const cargarArticulos = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/articulos`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Error al cargar los productos");
+    }
+
+    const productos = await response.json();
+    return productos;
+  } catch (error) {
+    console.error("Error al obtener productos:", error);
+    throw error;
   }
 };

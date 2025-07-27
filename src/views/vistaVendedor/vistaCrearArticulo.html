@@ -89,7 +89,7 @@
     <section class="section-container section-container--fondo-turquesa-oscuro">
       <form id="form-create-articulo" method="post" class="form form--ancho_aumentado" enctype="multipart/form-data" novalidate>
         <h1 class="title-principal title-principal--turquesa-medio">Crear Artículo</h1>
-
+        <!-- Imágenes -->
         <div class="form__content">
           <label for="imagen" class="input input--files"></label>
           <input class="input input--oculto" type="file" id="imagen" name="imagenes" accept="image/*" multiple required>
@@ -109,17 +109,26 @@
           <textarea class="input input--textarea" id="condicion_articulo" name="condicion_articulo" rows="4"
             placeholder="Describe la condición del artículo (nuevo, usado, con detalles, etc.)" required></textarea>
         </div>
-
+        <!-- Categoría -->
         <div class="form__content">
           <select class="select" id="categoria" name="id_categoria" required>
             <option class="option" value="">Selecciona una categoría</option>
-            Estas opciones deben son llenadas dinámicamente desde la base de datos
+            <!-- Estas opciones deben son llenadas dinámicamente desde la base de datos -->
           </select>
         </div>
         <div class="form__content">
           <input class="input" type="number" id="stock" name="stock" placeholder="Stock disponible" min="1" required>
         </div>
-
+        <div class="form__content">
+          <select class="select" name="id_ciudad" required>
+            <option class="option" value="">Selecciona una ciudad</option>
+          <!-- Opciones cargadas dinámicamente -->
+        </select>
+        <!-- Dirección -->
+        <div class="form__content">
+          <input class="input" type="text" name="direccion" placeholder="Dirección del artículo" required />
+        </div>
+      </div>
         <button id="btnCrearArticulo" class="button button--gradient-verde-agua_turquesa-oscuro" type="submit">Crear
           Artículo</button>
       </form>
