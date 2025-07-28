@@ -1,16 +1,5 @@
 import { cargarArticulos } from "../app.js";
 
-// const layout = document.querySelector('.layout');
-
-// const mostrarProductos = async () => {
-//   try {
-//     const productos = await cargarProductos();
-//     renderizarProductos(productos);
-//   } catch (error) {
-//     console.error("No se pudieron cargar los productos:", error);
-//   }
-// };
-
 const renderizarArticulo = async () => {
   try {
     const articulos = await cargarArticulos();  // Asumimos que ya es el objeto JSON
@@ -18,7 +7,7 @@ const renderizarArticulo = async () => {
 
     const layout = document.querySelector('.layout');
 
-    articulos.forEach(({ idArticulo, nombreArticulo, precioArticulo, condicionArticulo, stock, idCategoria, fotos }) => {
+    articulos.forEach(({ idArticulo, nombreArticulo, precioArticulo, categoria, fotos = [], vendedor }) => {
       // Crear elementos
       const card = document.createElement('div');
       const img = document.createElement('img');
@@ -65,7 +54,7 @@ const renderizarArticulo = async () => {
       icon_anadir.classList.add('icon', 'icon--blanco-agrandado');
       
       // Atributos
-      img.setAttribute('src', '../images/zapatos.png');
+      img.setAttribute('src', fotos.length > 0 ? `http://localhost:8080/Proyecto_Dylan_ReVibe/${fotos[0]}` : 'img/placeholder.png');
       img.setAttribute('alt', 'producto');
       
       icon_detalle.setAttribute('icon', 'mdi:information-outline');
@@ -79,15 +68,15 @@ const renderizarArticulo = async () => {
       
       strong_categoria.textContent = "Categoría:";
       text_categoria.append(strong_categoria);
-      text_categoria.append(" Moda");
+      text_categoria.append(` ${categoria.nombreCategoria}`);
       
       strong_ciudad.textContent = "Ciudad:";
       text_ciudad.append(strong_ciudad);
-      text_ciudad.append(" Bucaramanga");
+      text_ciudad.append(` ${vendedor.ciudad.nombreCiudad}`);
       
       strong_autor.textContent = "Publicado por:";
       text_autor.append(strong_autor);
-      text_autor.append(" Dylan Slebyng Bravo Becerra");
+      text_autor.append(` ${vendedor.nombre}`);
       // Agregar todo al contenedor de la card
       layout.append(card);
       card.append(img, card__title, card__details, card__buttons);
@@ -105,58 +94,55 @@ const renderizarArticulo = async () => {
 renderizarArticulo();
 
 
+const modal = document.querySelector('#modalArticulo');
 
+const openModalArticulo = (e) => {
+  const elemento = e.target;
 
+  // Abrir modal si se clickea el botón con clase btnDetallesArticulo
+  if (elemento.closest('.btnDetallesArticulo')) {
+    e.preventDefault();
+    modal.classList.add('modal--show');
+    // Aquí podrías cargar la info del artículo con JS dinámicamente
+  }
 
-// const modal = document.querySelector('#modalArticulo');
+  // Cerrar modal si se clickea el botón con clase modal__close
+  if (elemento.closest('#cerrarModal')) {
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+  }
+};
 
-// const openModalArticulo = (e) => {
-//   const elemento = e.target;
+document.addEventListener('click', openModalArticulo);
 
-//   // Abrir modal si se clickea el botón con clase btnDetallesArticulo
-//   if (elemento.closest('.btnDetallesArticulo')) {
-//     e.preventDefault();
-//     modal.classList.add('modal--show');
-//     // Aquí podrías cargar la info del artículo con JS dinámicamente
-//   }
+const imagenes = [
+  '../img/zapatos.png',
+  '../img/zapatos2.jpeg',
+  '../img/zapatos3.jpg'
+];
 
-//   // Cerrar modal si se clickea el botón con clase modal__close
-//   if (elemento.closest('#cerrarModal')) {
-//     e.preventDefault();
-//     modal.classList.remove('modal--show');
-//   }
-// };
+let indiceActual = 0;
 
-// document.addEventListener('click', openModalArticulo);
+// Selecciona correctamente los elementos
+const imgElemento = document.querySelector('.img--carrusel');
 
-// const imagenes = [
-//   '../img/zapatos.png',
-//   '../img/zapatos2.jpeg',
-//   '../img/zapatos3.jpg'
-// ];
+// Función de carrusel
+export const carrusel = (e) => {
+  const elemento = e.target;
 
-// let indiceActual = 0;
+  // Botón izquierda
+  if (elemento.closest('.btnIzquierda')) {
+    e.preventDefault();
+    indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+    imgElemento.src = imagenes[indiceActual];
+  }
 
-// // Selecciona correctamente los elementos
-// const imgElemento = document.querySelector('.img--carrusel');
+  // Botón derecha
+  if (elemento.closest('.btnDerecha')) {
+    e.preventDefault();
+    indiceActual = (indiceActual + 1) % imagenes.length;
+    imgElemento.src = imagenes[indiceActual];
+  }
+};
 
-// // Función de carrusel
-// export const carrusel = (e) => {
-//   const elemento = e.target;
-
-//   // Botón izquierda
-//   if (elemento.closest('.btnIzquierda')) {
-//     e.preventDefault();
-//     indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
-//     imgElemento.src = imagenes[indiceActual];
-//   }
-
-//   // Botón derecha
-//   if (elemento.closest('.btnDerecha')) {
-//     e.preventDefault();
-//     indiceActual = (indiceActual + 1) % imagenes.length;
-//     imgElemento.src = imagenes[indiceActual];
-//   }
-// };
-
-// document.addEventListener('click', carrusel);
+document.addEventListener('click', carrusel);

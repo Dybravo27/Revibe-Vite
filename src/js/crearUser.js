@@ -105,9 +105,14 @@ formCreate.addEventListener('submit', async (e) => {
     contrasenaUsuario: contrasenaUsuario.value,
     numTelefono: numTelefono.value,
     direccion: direccion.value,
-    idCiudad: parseInt(idCiudad.value),
-    idRol: parseInt(idRol.value)
+    ciudad: {
+      idCiudad: parseInt(idCiudad.value)
+    },
+    rol: {
+      idRol: parseInt(idRol.value)
+    }
   };
+
   console.log("Enviando usuario:", nuevoUsuario);
   try {
     // Llamar la función de crearUsuario

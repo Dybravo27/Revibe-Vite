@@ -25,22 +25,21 @@ formLogin.addEventListener('submit', async (e) => {
     try {
         const usuarioLogueado = await loginUsuario(usuario);
         alert("Login exitoso. Bienvenido " + usuarioLogueado.nombre);
-
-        // Redirección basada en el nombre del rol usando if
-        const rol = usuarioLogueado.rol?.nombreRol?.toLowerCase();
-        console.log("rol:", rol);
+        
+        const idRol = usuarioLogueado.rol?.idRol;
+        console.log("rol:", idRol);
         console.log("usuarioLogueado.idRol:", usuarioLogueado.idRol);
-
-        if (usuarioLogueado.idRol === 1) {
+        
+        if (idRol === 1) {
             window.location.href = "vistaAdministrador.html";
-        } else if (usuarioLogueado.idRol === 2) {
+        } else if (idRol === 2) {
             window.location.href = "vistaComprador.html";
-        } else if (usuarioLogueado.idRol === 3) {
+        } else if (idRol === 3) {
             window.location.href = "vistaVendedor.html";
-        }
-        else {
+        } else {
             alert("Rol desconocido, no se pudo redirigir.");
         }
+
 
     } catch (error) {
         alert("Error al iniciar sesión: " + error.message);

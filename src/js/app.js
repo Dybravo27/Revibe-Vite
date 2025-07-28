@@ -171,7 +171,7 @@ export const obtenerRoles = async () => {
 };
 
 // Función exportada que permite crear una imagen
-export const crearImagen = async (formData) => {
+export const crearArticulo = async (formData) => {
   try {
     const response = await fetch(`${BASE_URL}/fotos/articulo/imagenes`, {
       method: 'POST',

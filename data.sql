@@ -52,7 +52,9 @@ CREATE TABLE articulos (
     condicion_articulo TEXT NOT NULL,
     stock INT NOT NULL,
     id_categoria INT NOT NULL,
-    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+    id_usuario INT NOT NULL,
+    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
 CREATE TABLE comentarios (
@@ -126,34 +128,6 @@ INSERT INTO usuarios (nombre, apellido, correo_electronico, contraseña_usuario,
 ('Ana', 'Rodríguez', 'ana.admin@example.com', 'admin123', '3001234567', 'Cra 1 #10-20', 1, 1),
 ('Luis', 'Martínez', 'luis.cliente@example.com', 'cliente456', '3019876543', 'Calle 5 #15-30', 2, 2),
 ('Carla', 'Fernández', 'carla.vendedor@example.com', 'vende789', '3024567890', 'Av. Central 90', 3, 3);
-
-
-INSERT INTO articulos (nombre_articulo, precio_articulo, condicion_articulo, stock, id_categoria)
-VALUES 
-('Camiseta Roja', 25.00, 'Nueva', 100, 1),
-('Smartphone X', 50.00, 'Nuevo', 50, 2),
-('Silla de Oficina', 75.00, 'Usada', 30, 3);
-
--- INSERTAR CARRITOS (primero porque son FK en detalles)
-INSERT INTO carritos (fecha_creacion, id_usuario) 
-VALUES 
-('2025-07-23 10:00:00', 2),
-('2025-07-23 12:30:00', 3),
-('2025-07-24 09:00:00', 1);
-
--- INSERTAR VENTAS
-INSERT INTO ventas (fecha_venta, metodo_pago, total_pago, id_usuario, estado_transaccion)
-VALUES 
-('2025-07-23 10:00:00', 'Contraentrega', 150.50, 2, TRUE),
-('2025-07-23 12:30:00', 'Contraentrega', 50.00, 3, TRUE),
-('2025-07-24 09:00:00', 'Contraentrega', 120.75, 1, TRUE);
-
--- INSERTAR DETALLES DE VENTAS (ahora sí sin errores)
-INSERT INTO detalles_ventas_carros (id_articulo, id_venta, id_carrito, cantidad)
-VALUES 
-(1, 1, 1, 2),
-(3, 2, 2, 1),
-(2, 3, 3, 3);
 
 SELECT * FROM usuarios;
 SELECT * FROM ciudades;
